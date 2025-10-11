@@ -1,0 +1,19 @@
+# Build ve obj klasörleri
+bin/
+obj/
+
+# User-specific dosyalar
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Veritabanı dosyaları (SQLite)
+*.db
+*.db-shm
+*.db-wal
+
+# Publish çıktıları
+wwwroot/
+node_modules/
+dist/
