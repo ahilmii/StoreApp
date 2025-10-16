@@ -59,11 +59,4 @@ nesnesinin nasıl oluşturulacağını öğrettin. Ona veritabanının adresini 
 
 7) ProductController da bu nesneyi alıp _context alanına atar ve Index metodunda kullanmaya başlar
 
-
-
-
-
-
-
-
 */

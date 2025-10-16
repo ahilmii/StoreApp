@@ -1,20 +1,43 @@
-@model List<StoreApp.Models.Product>
+@model List<Product>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-@foreach (StoreApp.Models.Product prd in Model) {
+@* 
+@section Footer { <!-- istediğim gibi özelleştirebilirim -->
     <div>
-        <p>@prd.ProductName @prd.Price</p> <a href="/Product/Get/@prd.ProductId">Get Details</a>
+        ONly for Index Footer
     </div>
+} *@
+
+@* @section Header {
+    <div>
+        burasi Index header
+    </div>
+} *@
+
+<div class="row my-3">
+@foreach (Product prd in Model) {
+
+    
+        <partial name="_ProductCard" model="@prd" />
+    
 }
+</div>
+
+@* 
+@model List<Product> dedik, yani bu view birden fazla nesne alıyor.
+
+Partial view, bir sayfanın yeniden kullanılabilir küçük parçasıdır. örneğin ürün kartı, yorum kutusu, navbar, footer gibi kısımlar.
+
+<partial name="_ProductCard" model="@prd" /> : “_ProductCard.cshtml dosyasını bu noktada render et,
+ve ona şu anki ürün (prd) nesnesini model olarak gönder.”
+
+model="@prd" : Bu kısım, _ProductCard view’ına hangi verinin (modelin) gönderileceğini belirtiyor.
 
 
-</body>
-</html>
+
+Bu döngü içinde prd değişkeni tek bir Product nesnesi temsil ediyor.
+model="@prd" diyerek _ProductCard view’ına bu tek nesneyi gönderiyoruz.
+
+dolayısıyla _ProductCard.cshtml'de @model PRoduct diyerek tek bir nesne alıyoruz ve onun üzerinde işlem yapıyoruz.
+
+
+ *@

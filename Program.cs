@@ -36,6 +36,7 @@ Artık elinde, doğru veritabanına bağlanmış, kullanıma hazır bir Reposito
 
 var app = builder.Build();
 
+app.UseStaticFiles();
 app.UseHttpsRedirection();
 app.UseRouting();
 
